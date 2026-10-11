@@ -1,0 +1,8 @@
+EXPLAIN SELECT * FROM Products WHERE productCode = 'P004';
+-- type: ALL, key: NULL, rows: (scans whole table)
+
+EXPLAIN SELECT * FROM Products WHERE productName LIKE '%Desk%';
+-- type: ALL, key: NULL, rows: (full scan because leading wildcard)
+
+EXPLAIN SELECT * FROM Products WHERE productPrice BETWEEN 50 AND 300;
+-- type: ALL, key: NULL, rows: (range on full table)
