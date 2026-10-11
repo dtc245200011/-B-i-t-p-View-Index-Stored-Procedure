@@ -1,0 +1,8 @@
+EXPLAIN SELECT * FROM Products WHERE productCode = 'P004';
+-- type: const or eq_ref, key: ux_productCode, rows: 1
+
+EXPLAIN SELECT * FROM Products WHERE productName = 'Office Desk' AND productPrice = 199.00;
+-- type: ref or range, key: idx_name_price, rows: small
+
+EXPLAIN SELECT * FROM Products WHERE productName LIKE '%Desk%';
+-- still type: ALL (leading wildcard prevents index use)
