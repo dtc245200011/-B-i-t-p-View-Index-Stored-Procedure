@@ -1,0 +1,5 @@
+-- Output of CALL sp_addProduct returned new_id = 11
+-- SELECT after insert shows productCode P011 present
+-- CALL sp_updateProductById returned rows_affected = 1
+-- After delete, SELECT returns empty set for P011
+-- SELECT * FROM product_views shows active products with in_stock flag
